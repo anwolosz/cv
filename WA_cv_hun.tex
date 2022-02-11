@@ -1,0 +1,221 @@
+%!TEX program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+%Use command 'xelatex xetex_template.tex'. and view 'xetex_template.pdf'.
+
+%Document information
+%   Option a4paper:    overwrite default page size 'letterpaper'.
+%   Option 12pt:       overwrite default font size '10pt'.
+%   Option draft:      indication of warnings
+%                      (print a box at the end of overfull lines or
+%                      at the place of not loaded figures).
+%                      This option should be replaced with 'final' or
+%                      simply deleted at final document version.
+%   Parameter article: for short documents.   
+\documentclass[a4paper, 12pt, draft]{article}
+%Further document information may be used:
+%   Option twocolumn:       to use two columns.
+%   Option twoside/oneside: to use one/twoside pages.
+%   Option landscape:       to use landscape page layout (pdflscape or
+%                           geometry packages shall be used as well ).
+%   Option hungarian:       ?
+%   Parameter extarticle:   for small font sizes.
+
+%Main settings
+%?\usepackage{lmodern} %?így rendesen lehet keresni a pdf-ben
+
+%Documenty stlye
+%\usepackage[margin=4cm]{geometry} %To set margins.
+%\thispagestyle{empty} %To hide page numbers
+\usepackage[cm,empty]{fullpage} %All 4 mar­gins to be ei­ther 1 inch or
+%                                 1.5 cm, and spec­i­fies the page style.
+%                                 This command is equivalent to:
+%                                 \usepackage[margin=1.5cm]{geometry}
+%                                 \thispagestyle{empty}
+%? french spacing
+
+%CV specific
+\setlength\parindent{0pt} %No indentation in document
+
+%Penalties
+%   \hyphenpenalty: Penalty for line breaking at an automatically
+%                   inserted hyphen. Default value: 50.
+%   \brokenpenalty: Extra penalty for page breaking
+%                   after a hyphenated line. Default value: 100.
+%   \clubpenalty:   Extra penalty for breaking after first line of
+%                   a paragraph. Default value: 150.
+%   \widowpenalty:  Extra penalty for breaking before last line of
+%                   a paragraph. Default value: 150.
+%   For maximum penalty set 11000.
+%   \emergencystretch{3em} can be used against overfull lines.
+
+%Hungarian settings
+\usepackage{polyglossia} %Correct hyphenation
+\setmainlanguage{magyar} %Hungarian hyphenation
+%?\hyphenation{projektteam-ekkel}
+
+%Font settings
+%   To get available fonts use this command:
+%   fc-list  | cut -d\  -f2-99 | cut -d: -f1 | sort -u
+\usepackage{fontspec} %Set ttf, otf.
+\usepackage{xunicode} %?Acces to access to latin accents and glyphs.
+\usepackage{xltxtra}  %?Glyphs, superscripts, \showhyphens.
+%\newfontfamily\namefontW[Mapping=tex-text, Variant=05]{Linux Libertine Display G}
+%\newfontfamily\monofont[Mapping=tex-text]{Linux Libertine Mono}
+%\newfontfamily\gsc[Mapping=tex-text]{Linux Libertine}
+%\newfontfamily\Rfont[Mapping=tex-text, Variant=02]{Linux Libertine G}
+
+%Margins
+\usepackage{calc}
+\newlength{\margin}
+\setlength{\margin}{0.5\textwidth-0.5em-2.25pt-197pt}
+\newlength{\content}
+\setlength{\content}{0.5\textwidth-0.5em-2.25pt+197pt} % Two column width: \textwidth-1em-4.5pt
+                                                 % Half: 0.5\textwidth-0.5em-2.25pt
+\newlength{\halfpage}
+\setlength{\halfpage}{0.5\textwidth-0.5em-2.25pt}
+\fboxsep0pt
+
+%\setlength{\parindent}{0cm}
+%Table
+\usepackage{array, xcolor}
+\definecolor{lightgray}{gray}{0.8}
+\newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
+%\newcolumntype{L}{>{\raggedright}p{0.1\textwidth}}
+%\newcolumntype{M}{>{\raggedright}p{0.5\textwidth}}
+
+%Debug
+%\usepackage{showframe}                       %Check regions of page
+%\showhyphens{meggy\"ultetv\'eny} %Check hungarian hyphens
+
+%Document body
+\overfullrule=0pt
+\begin{document}
+
+\begin{minipage}[t]{\halfpage}
+{\LARGE Wolosz András}
+\end{minipage}
+\enspace{\VRule}\enspace
+\begin{minipage}[t]{\halfpage}
+\textbf{mail@gmail.com}\\
+\textbf{+36 telefon}\\
+Lakcím: Irányítószám Város, Utca utca házszám.\\
+Születési hely és idő: Város, Év. hónap nap.
+\vspace{2 mm}
+\end{minipage}
+
+\vspace{-3mm}
+\subsection*{Szakmai gyakorlat}
+
+\begin{minipage}[t]{\margin}
+\mbox{2021}
+\end{minipage}
+\enspace{\VRule}\enspace
+\begin{minipage}[t]{\content}
+\textbf{Nyelvtudományi Kutatóközpont, Nyelvtechnológiai Kutatócsoport} \\ Gyakornok \\
+\end{minipage}
+\vspace{1mm}\\
+
+
+\vspace{0mm}
+
+\vspace{-10mm}
+\subsection*{Tanulmányok}
+
+\begin{minipage}[t]{\margin}
+\mbox{2021–}
+\end{minipage}
+\enspace{\VRule}\enspace
+\begin{minipage}[t]{\content}
+\textbf{Eötvös Loránd Tudományegyetem, Informatikai Kar} \\ Programtervező informatikus mesterképzési szak (MSc),\\Szoftvertechnológia specializáció \\
+\end{minipage}
+\vspace{-10mm}\\
+
+\begin{minipage}[t]{\margin}
+\mbox{2018–2021}
+\end{minipage}
+\enspace{\VRule}\enspace
+\begin{minipage}[t]{\content}
+\textbf{Eötvös Loránd Tudományegyetem, Informatikai Kar} \\ Programtervező informatikus alapképzési szak (BSc) \\
+\end{minipage}
+\vspace{-10mm}\\
+
+\begin{minipage}[t]{\margin}
+\mbox{2014-2018}
+\end{minipage}
+\enspace{\VRule}\enspace
+\begin{minipage}[t]{\content}
+\textbf{PTE Gyakorló Általános Iskola és Gimnázium Babits Mihály Gimnáziuma} \\ Matematika-informatika osztályprofil \\
+\end{minipage}
+\vspace{1mm}\\
+
+\vspace{0mm} 
+
+\vspace{-10mm}
+\subsection*{Egyetemi tevékenységek}
+
+\begin{minipage}[t]{\margin}
+\mbox{2021–}
+\end{minipage}
+\enspace{\VRule}\enspace
+\begin{minipage}[t]{\content}
+\textbf{Demonstrátori program} \\ Oktatott tárgyak: Számítógépes rendszerek, Web-fejlesztés \\
+\end{minipage}
+\vspace{1mm}\\
+
+\vspace{0mm}
+
+
+\vspace{-10mm}
+\subsection*{Programozási ismeretek}
+\begin{minipage}[t]{\margin}
+\textsc{OOP}
+\end{minipage}
+\enspace{\VRule}\enspace
+\begin{minipage}[t]{\content}
+\textbf{C++ \\ Python3} \\
+\end{minipage}
+\vspace{-3mm}\\
+\begin{minipage}[t]{\margin}
+\textsc{Web}
+\end{minipage}
+\enspace{\VRule}\enspace
+\begin{minipage}[t]{\content}
+\textbf{HTML, CSS, JS, PHP \\ Angular, Laravel} \\
+\end{minipage}
+\vspace{-3mm}\\
+\begin{minipage}[t]{\margin}
+\textsc{Shell}
+\end{minipage}
+\enspace{\VRule}\enspace
+\begin{minipage}[t]{\content}
+\textbf{Bash} \\
+\end{minipage}
+\vspace{1mm}\\
+\vspace{0mm}
+
+
+\vspace{-5mm}
+\subsection*{Egyéb számítógépes ismeretek}
+Linux, Microsoft Office, GIMP
+\vspace{1mm}\\
+\vspace{0mm}
+
+\vspace{-5mm}
+\subsection*{Nyelvi készségek}
+\begin{minipage}[t]{\margin}
+\end{minipage}
+\vspace{0mm}
+\begin{minipage}[t]{\margin}
+\textsc{Angol}
+\end{minipage}
+\enspace{\VRule}\enspace
+\begin{minipage}[t]{\content}
+\textbf{Társalgási szint} – ECL B2 nyelvvizsga
+\end{minipage}\vspace{1mm}\\
+\vspace{0mm}
+
+\vspace{-5mm}
+\subsection*{Érdeklődési kör}
+Szívesen gitározom és origamizom. A kollégiumban társasjáték klubbot alapítottam, ahol heti rendszerességgel szoktunk játszani. Szabadidőmben Point \& Click játékokat fejlesztek.
+\end{document}
